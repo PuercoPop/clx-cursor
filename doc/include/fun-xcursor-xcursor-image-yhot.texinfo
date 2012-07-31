@@ -1,0 +1,5 @@
+@findex xcursor-image-yhot
+@anchor{Function xcursor-image-yhot}
+@deffn {Function} {xcursor-image-yhot} instance
+Return whether debug-block represents elsewhere code.
+@end deffn

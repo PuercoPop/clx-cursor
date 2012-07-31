@@ -1,0 +1,5 @@
+@findex xcursor-image-width
+@anchor{Function xcursor-image-width}
+@deffn {Function} {xcursor-image-width} instance
+Return whether debug-block represents elsewhere code.
+@end deffn

@@ -1,0 +1,5 @@
+@findex xcursor-copyright
+@anchor{Function xcursor-copyright}
+@deffn {Function} {xcursor-copyright} instance
+Return whether debug-block represents elsewhere code.
+@end deffn

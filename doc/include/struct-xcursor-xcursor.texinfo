@@ -1,0 +1,8 @@
+@tindex xcursor
+@anchor{Structure xcursor}
+@deftp {Structure} {xcursor}
+Class precedence list: @code{@lw{xcursor}, @lw{structure-object}, @lw{t}}
+
+Structure contains xcursor information from Xcur file.
+Images slot is array of xcursor-images.
+@end deftp

@@ -1,0 +1,5 @@
+@findex xcursor-image-delay
+@anchor{Function xcursor-image-delay}
+@deffn {Function} {xcursor-image-delay} instance
+Return whether debug-block represents elsewhere code.
+@end deffn

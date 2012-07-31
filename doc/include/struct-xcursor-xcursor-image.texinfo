@@ -1,0 +1,9 @@
+@tindex xcursor-image
+@anchor{Structure xcursor-image}
+@deftp {Structure} {xcursor-image}
+Class precedence list: @code{@lw{xcursor-image}, @lw{structure-object}, @lw{t}}
+
+Structure containg cursor glyph information. Data is 2 dimensional array with @code{argb} pixels.
+Data can be used in xlib:create-image :data parameter.
+Delay slot is used for animated cursors (milliseconds).
+@end deftp

@@ -1,0 +1,5 @@
+@findex set-theme
+@anchor{Function set-theme}
+@deffn {Function} {set-theme} display @&optional name size
+Sets current theme to name and size.
+@end deffn

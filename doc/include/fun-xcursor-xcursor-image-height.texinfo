@@ -1,0 +1,5 @@
+@findex xcursor-image-height
+@anchor{Function xcursor-image-height}
+@deffn {Function} {xcursor-image-height} instance
+Return whether debug-block represents elsewhere code.
+@end deffn

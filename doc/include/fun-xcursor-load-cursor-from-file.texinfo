@@ -1,0 +1,5 @@
+@findex load-cursor-from-file
+@anchor{Function load-cursor-from-file}
+@deffn {Function} {load-cursor-from-file} display filepath
+Reads Xcur file, and returns xcursor object. xcursor object can be used in @reffun{add-cursor}.
+@end deffn

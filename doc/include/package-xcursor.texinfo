@@ -1,0 +1,5 @@
+@anchor{Package xcursor}
+@defvr {Package} {xcursor}
+Library for loading cursor pixmaps from Xcur files and rendering it 
+with Xrender. Library supports themes.
+@end defvr

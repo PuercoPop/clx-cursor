@@ -1,0 +1,5 @@
+@findex theme
+@anchor{Function theme}
+@deffn {Function} {theme} display
+Returns current theme name and size.
+@end deffn

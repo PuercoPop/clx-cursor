@@ -1,0 +1,6 @@
+@findex cursor
+@anchor{Function cursor}
+@deffn {Function} {cursor} drawable name
+Returns cursor object, which can be used with (xlib:window-cursor).
+If Xrender and theme icon file is available, tries to load cursor from that file, else load standard xlib cursor glyph. index.theme is not supported.
+@end deffn

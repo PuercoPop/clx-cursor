@@ -1,0 +1,5 @@
+@findex xcursor-filename
+@anchor{Function xcursor-filename}
+@deffn {Function} {xcursor-filename} instance
+Return whether debug-block represents elsewhere code.
+@end deffn

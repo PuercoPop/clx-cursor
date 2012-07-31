@@ -1,0 +1,259 @@
+\input texinfo   @c -*-texinfo-*-
+@c %**start of header
+@setfilename clx-cursor.info
+@documentencoding UTF-8
+@settitle CLX-CURSOR
+@c %**end of header
+
+@c for install-info
+@dircategory Software development
+@direntry
+* clx-truetype:           Documentation String to CLX Cursor library
+@end direntry
+
+@finalout
+@setcontentsaftertitlepage
+
+@macro project
+@sc{clx-cursor }
+@end macro
+
+@titlepage
+@title @project
+@subtitle CLX Cursor loader
+@end titlepage
+
+@include include/sb-texinfo.texinfo
+
+@node Top
+@top Introduction
+
+@project is made for antialiasing cursor rendering for CLX.
+
+@project was started from removing <<xsetroot -cursor_name>> command
+execution from .stumwpmrc.
+
+@c Version control
+@project is maintained in Git:
+@example
+git clone git://github.com/filonenko-mikhail/clx-cursor
+@end example
+will get you a local copy.
+@example
+@url{http://github.com/filonenko-mikhail/clx-cursor/}
+@end example
+is the GitHub project page, where the issue tracker is located.
+
+@contents
+
+@menu
+* Overview::                    
+* Examples::                    
+* Dictionary::                  
+* Concept Index::               
+* Function Index::              
+* Variable Index::              
+* Type Index::                  
+* Colophon::                    
+@end menu
+
+@node Overview
+@comment  node-name,  next,  previous,  up
+@chapter Overview
+
+@project is library for loading cursor glyphs (or in other words pixmaps, icons)
+
+The following table contains standard pixmaps for cursors. Antialiased
+pixmaps from desktop themes have slightly similar, but more glamour shapes.
+
+@multitable @columnfractions .25 .25 .25 .25
+
+@item image @tab keyword @tab image @tab keyword
+
+@item @image{images/0} @image{images/1} @tab :X-cursor @tab
+@image{images/76} @image{images/77} @tab :ll-angle
+
+@item @image{images/2} @image{images/3} @tab :arrow
+@tab  @image{images/78} @image{images/79} @tab :lr-angle
+
+
+@item @image{images/4} @image{images/5} @tab :based-arrow-down
+@tab @image{images/80}  @image{images/81} @tab :man 
+
+@item @image{images/6} @image{images/7} @tab :based-arrow-up
+@tab @image{images/82}  @image{images/83} @tab :middlebutton 
+
+@item @image{images/8} @image{images/9} @tab :boat
+@tab @image{images/84}  @image{images/85} @tab :mouse 
+
+@item @image{images/10} @image{images/11} @tab :bogosity 
+@tab @image{images/86}  @image{images/87} @tab :pencil 
+
+@item @image{images/12} @image{images/13} @tab :bottom-left-corner 
+@tab @image{images/88}  @image{images/89} @tab :pirate 
+
+@item @image{images/14} @image{images/15} @tab :bottom-right-corner 
+@tab @image{images/90}  @image{images/91} @tab :plus 
+
+@item @image{images/16} @image{images/17} @tab :bottom-side 
+@tab @image{images/92}  @image{images/93} @tab :question-arrow 
+
+@item @image{images/18} @image{images/19} @tab :bottom-tee 
+@tab @image{images/94}  @image{images/95} @tab :right-ptr 
+
+@item @image{images/20} @image{images/21} @tab :box-spiral 
+@tab @image{images/96}  @image{images/97} @tab :right-side 
+
+@item @image{images/22} @image{images/23} @tab :center-ptr 
+@tab @image{images/98}  @image{images/99} @tab :right-tee 
+
+@item @image{images/24} @image{images/25} @tab :circle 
+@tab @image{images/100} @image{images/101} @tab :rightbutton
+
+@item @image{images/26} @image{images/27} @tab :clock 
+@tab @image{images/102} @image{images/103} @tab :rtl-logo
+
+@item @image{images/28} @image{images/29} @tab :coffee-mug 
+@tab @image{images/104} @image{images/105} @tab :sailboat
+
+@item @image{images/30} @image{images/31} @tab :cross 
+@tab @image{images/106} @image{images/107} @tab :sb-down-arrow 
+
+@item @image{images/32} @image{images/33} @tab :cross-reverse 
+@tab @image{images/108} @image{images/109} @tab :sb-h-double-arrow 
+
+@item @image{images/34} @image{images/35} @tab :crosshair 
+@tab @image{images/110} @image{images/111} @tab :sb-left-arrow 
+
+@item @image{images/36} @image{images/37} @tab :diamond-cross 
+@tab @image{images/112} @image{images/113} @tab :sb-right-arrow 
+
+@item @image{images/38} @image{images/39} @tab :dot 
+@tab @image{images/114} @image{images/115} @tab :sb-up-arrow 
+
+@item @image{images/40} @image{images/41} @tab :dot-box-mask 
+@tab @image{images/116} @image{images/117} @tab :sb-v-double-arrow 
+
+@item @image{images/42} @image{images/43} @tab :double-arrow 
+@tab @image{images/118} @image{images/119} @tab :shuttle 
+
+@item @image{images/44} @image{images/45} @tab :draft-large 
+@tab @image{images/120} @image{images/121} @tab :sizing 
+
+@item @image{images/46} @image{images/47} @tab :draft-small 
+@tab @image{images/122} @image{images/123} @tab :spider 
+
+@item @image{images/48} @image{images/49} @tab :draped-box 
+@tab @image{images/124} @image{images/125} @tab :spraycan 
+
+@item @image{images/50} @image{images/51} @tab :exchange 
+@tab @image{images/126} @image{images/127} @tab :star 
+
+@item @image{images/52} @image{images/53} @tab :fleur 
+@tab @image{images/128} @image{images/129} @tab :target 
+
+@item @image{images/54} @image{images/55} @tab :gobbler 
+@tab @image{images/130} @image{images/131} @tab :tcross 
+
+@item @image{images/56} @image{images/57} @tab :gumby 
+@tab @image{images/132} @image{images/133} @tab :top-left-arrow 
+
+@item @image{images/58} @image{images/59} @tab :hand1 
+@tab @image{images/134} @image{images/135} @tab :top-left-corner 
+
+@item @image{images/60} @image{images/61} @tab :hand2 
+@tab @image{images/136} @image{images/137} @tab :top-right-corner 
+
+@item @image{images/62} @image{images/63} @tab :heart 
+@tab @image{images/138} @image{images/139} @tab :top-side 
+
+@item @image{images/64} @image{images/65} @tab :icon 
+@tab @image{images/140} @image{images/141} @tab :top-tee 
+
+@item @image{images/66} @image{images/67} @tab :iron-cross 
+@tab @image{images/142} @image{images/143} @tab :trek 
+
+@item @image{images/68} @image{images/69} @tab :left-ptr 
+@tab @image{images/144} @image{images/145} @tab :ul-angle 
+
+@item @image{images/70} @image{images/71} @tab :left-side 
+@tab @image{images/146} @image{images/147} @tab :umbrella 
+
+@item @image{images/72} @image{images/73} @tab :left-tee 
+@tab @image{images/148} @image{images/149} @tab :ur-angle 
+
+@item @image{images/74} @image{images/75} @tab :leftbutton 
+@tab @image{images/150} @image{images/151} @tab :watch 
+
+@item @tab @tab @image{images/152} @image{images/153} @tab :xterm 
+
+@end multitable
+
+@node Examples
+@comment  node-name,  next,  previous,  up
+@chapter Examples
+
+Open display and set cursor theme for it:
+
+@lisp
+(set-theme *display* "Vanilla-DMZ-LH" 24)
+@end lisp
+
+Get cursor object:
+
+@lisp
+(setf cursor (get-cursor *root* :left-prt))
+@end lisp
+
+Set it to window:
+@lisp
+(setf (xlib:window-cursor *root*) cursor)
+@end lisp
+
+All cursor pixmaps can be viewed in window. Just click on name:
+
+@lisp
+(asdf:load-system :clx-cursor-test)
+(clx-cursor-test:show-window "Vanilla-DMZ-AA")
+@end lisp
+
+@node Dictionary
+@comment  node-name,  next,  previous,  up
+@chapter Dictionary
+
+@include include/package-xcursor.texinfo
+
+@include include/var-xcursor-star-icon-paths-star.texinfo
+
+@include include/fun-xcursor-set-theme.texinfo
+@include include/fun-xcursor-theme.texinfo
+
+@include include/struct-xcursor-xcursor.texinfo
+@include include/struct-xcursor-xcursor-image.texinfo
+
+@c @include include/fun-xcursor-make-xcursor.texinfo
+@c @include include/fun-xcursor-xcursor-p.texinfo
+@c @include include/fun-xcursor-copy-xcursor.texinfo
+@c @include include/fun-xcursor-xcursor-filename.texinfo
+@c @include include/fun-xcursor-xcursor-copyright.texinfo
+@c @include include/fun-xcursor-xcursor-license.texinfo
+@c @include include/fun-xcursor-xcursor-other.texinfo
+@c @include include/fun-xcursor-xcursor-images.texinfo
+
+@c @include include/fun-xcursor-make-xcursor-image.texinfo
+@c @include include/fun-xcursor-xcursor-image-p.texinfo
+@c @include include/fun-xcursor-copy-xcursor-image.texinfo
+@c @include include/fun-xcursor-xcursor-image-width.texinfo
+@c @include include/fun-xcursor-xcursor-image-height.texinfo
+@c @include include/fun-xcursor-xcursor-image-xhot.texinfo
+@c @include include/fun-xcursor-xcursor-image-yhot.texinfo
+@c @include include/fun-xcursor-xcursor-image-delay.texinfo
+@c @include include/fun-xcursor-xcursor-image-data.texinfo
+
+@include include/fun-xcursor-load-cursor-from-file.texinfo
+@include include/fun-xcursor-add-cursor.texinfo
+@include include/fun-xcursor-cursor.texinfo
+
+@include include/backmatter.texinfo
+
+@bye

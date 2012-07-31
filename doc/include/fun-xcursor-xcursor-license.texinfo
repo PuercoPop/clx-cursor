@@ -1,0 +1,5 @@
+@findex xcursor-license
+@anchor{Function xcursor-license}
+@deffn {Function} {xcursor-license} instance
+Return whether debug-block represents elsewhere code.
+@end deffn

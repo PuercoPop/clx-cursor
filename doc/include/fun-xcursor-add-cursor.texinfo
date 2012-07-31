@@ -1,0 +1,5 @@
+@findex add-cursor
+@anchor{Function add-cursor}
+@deffn {Function} {add-cursor} dispaly xcursor name
+Stores xcursor into cache. @var{name} must be keyword.
+@end deffn

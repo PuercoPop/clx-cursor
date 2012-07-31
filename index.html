@@ -1,0 +1,448 @@
+<html lang="en">
+<head>
+<title>CLX-CURSOR</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="CLX-CURSOR">
+<meta name="generator" content="makeinfo 4.13">
+<link title="Top" rel="top" href="#Top">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+.node { visibility:hidden; height: 0px; }
+.menu { visibility:hidden; height: 0px; }
+.appendix { background-color:#d3d3d3; padding: 0.2em; }
+.chapter { background-color:#d3d3d3; padding: 0.2em; }
+.section { background-color:#d3d3d3; padding: 0.2em; }
+.settitle { background-color:#d3d3d3; }
+.contents { border: 2px solid black;
+            margin: 1cm 1cm 1cm 1cm;
+            padding-left: 3mm; }
+.lisp { padding: 0; margin: 0em; }
+body { padding: 2em 8em; font-family: sans-serif; }
+h1 { padding: 1em; text-align: center; }
+li { margin: 1em; }
+
+--></style>
+</head>
+<body>
+<h1 class="settitle">CLX-CURSOR</h1>
+<div class="node">
+<a name="Top"></a>
+<p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Overview">Overview</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#dir">(dir)</a>
+
+</div>
+
+<h2 class="unnumbered">Introduction</h2>
+
+<p><span class="sc">clx-cursor </span> is made for antialiasing cursor rendering for CLX.
+
+   <p><span class="sc">clx-cursor </span> was started from removing &lt;&lt;xsetroot -cursor_name&gt;&gt; command
+execution from .stumwpmrc.
+
+<!-- Version control -->
+   <p><span class="sc">clx-cursor </span> is maintained in Git:
+<pre class="example">     git clone git://github.com/filonenko-mikhail/clx-cursor
+</pre>
+   <p>will get you a local copy.
+<pre class="example">     <a href="http://github.com/filonenko-mikhail/clx-cursor/">http://github.com/filonenko-mikhail/clx-cursor/</a>
+</pre>
+   <p>is the GitHub project page, where the issue tracker is located.
+
+   <div class="contents">
+<h2>Table of Contents</h2>
+<ul>
+<li><a name="toc_Top" href="#Top">Introduction</a>
+<li><a name="toc_Overview" href="#Overview">1 Overview</a>
+<li><a name="toc_Examples" href="#Examples">2 Examples</a>
+<li><a name="toc_Dictionary" href="#Dictionary">3 Dictionary</a>
+<li><a name="toc_Concept-Index" href="#Concept-Index">Appendix A Concept Index</a>
+<li><a name="toc_Function-Index" href="#Function-Index">Appendix B Function Index</a>
+<li><a name="toc_Variable-Index" href="#Variable-Index">Appendix C Variable Index</a>
+<li><a name="toc_Type-Index" href="#Type-Index">Appendix D Type Index</a>
+<li><a name="toc_Colophon" href="#Colophon">Colophon</a>
+</li></ul>
+</div>
+
+<ul class="menu">
+<li><a accesskey="1" href="#Overview">Overview</a>
+<li><a accesskey="2" href="#Examples">Examples</a>
+<li><a accesskey="3" href="#Dictionary">Dictionary</a>
+<li><a accesskey="4" href="#Concept-Index">Concept Index</a>
+<li><a accesskey="5" href="#Function-Index">Function Index</a>
+<li><a accesskey="6" href="#Variable-Index">Variable Index</a>
+<li><a accesskey="7" href="#Type-Index">Type Index</a>
+<li><a accesskey="8" href="#Colophon">Colophon</a>
+</ul>
+
+<div class="node">
+<a name="Overview"></a>
+<p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Examples">Examples</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Top">Top</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<!-- node-name,  next,  previous,  up -->
+<h2 class="chapter">1 Overview</h2>
+
+<p><span class="sc">clx-cursor </span> is library for loading cursor glyphs (or in other words pixmaps, icons)
+
+   <p>The following table contains standard pixmaps for cursors. Antialiased
+pixmaps from desktop themes have slightly similar, but more glamour shapes.
+
+   <p><table summary="">
+<tr align="left"><td valign="top" width="25%">image </td><td valign="top" width="25%">keyword </td><td valign="top" width="25%">image </td><td valign="top" width="25%">keyword
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/0.png" alt="images/0.png"> <img src="images/1.png" alt="images/1.png"> </td><td valign="top" width="25%">:X-cursor </td><td valign="top" width="25%">
+<img src="images/76.png" alt="images/76.png"> <img src="images/77.png" alt="images/77.png"> </td><td valign="top" width="25%">:ll-angle
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/2.png" alt="images/2.png"> <img src="images/3.png" alt="images/3.png"> </td><td valign="top" width="25%">:arrow
+</td><td valign="top" width="25%"><img src="images/78.png" alt="images/78.png"> <img src="images/79.png" alt="images/79.png"> </td><td valign="top" width="25%">:lr-angle
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/4.png" alt="images/4.png"> <img src="images/5.png" alt="images/5.png"> </td><td valign="top" width="25%">:based-arrow-down
+</td><td valign="top" width="25%"><img src="images/80.png" alt="images/80.png">  <img src="images/81.png" alt="images/81.png"> </td><td valign="top" width="25%">:man
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/6.png" alt="images/6.png"> <img src="images/7.png" alt="images/7.png"> </td><td valign="top" width="25%">:based-arrow-up
+</td><td valign="top" width="25%"><img src="images/82.png" alt="images/82.png">  <img src="images/83.png" alt="images/83.png"> </td><td valign="top" width="25%">:middlebutton
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/8.png" alt="images/8.png"> <img src="images/9.png" alt="images/9.png"> </td><td valign="top" width="25%">:boat
+</td><td valign="top" width="25%"><img src="images/84.png" alt="images/84.png">  <img src="images/85.png" alt="images/85.png"> </td><td valign="top" width="25%">:mouse
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/10.png" alt="images/10.png"> <img src="images/11.png" alt="images/11.png"> </td><td valign="top" width="25%">:bogosity
+</td><td valign="top" width="25%"><img src="images/86.png" alt="images/86.png">  <img src="images/87.png" alt="images/87.png"> </td><td valign="top" width="25%">:pencil
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/12.png" alt="images/12.png"> <img src="images/13.png" alt="images/13.png"> </td><td valign="top" width="25%">:bottom-left-corner
+</td><td valign="top" width="25%"><img src="images/88.png" alt="images/88.png">  <img src="images/89.png" alt="images/89.png"> </td><td valign="top" width="25%">:pirate
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/14.png" alt="images/14.png"> <img src="images/15.png" alt="images/15.png"> </td><td valign="top" width="25%">:bottom-right-corner
+</td><td valign="top" width="25%"><img src="images/90.png" alt="images/90.png">  <img src="images/91.png" alt="images/91.png"> </td><td valign="top" width="25%">:plus
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/16.png" alt="images/16.png"> <img src="images/17.png" alt="images/17.png"> </td><td valign="top" width="25%">:bottom-side
+</td><td valign="top" width="25%"><img src="images/92.png" alt="images/92.png">  <img src="images/93.png" alt="images/93.png"> </td><td valign="top" width="25%">:question-arrow
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/18.png" alt="images/18.png"> <img src="images/19.png" alt="images/19.png"> </td><td valign="top" width="25%">:bottom-tee
+</td><td valign="top" width="25%"><img src="images/94.png" alt="images/94.png">  <img src="images/95.png" alt="images/95.png"> </td><td valign="top" width="25%">:right-ptr
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/20.png" alt="images/20.png"> <img src="images/21.png" alt="images/21.png"> </td><td valign="top" width="25%">:box-spiral
+</td><td valign="top" width="25%"><img src="images/96.png" alt="images/96.png">  <img src="images/97.png" alt="images/97.png"> </td><td valign="top" width="25%">:right-side
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/22.png" alt="images/22.png"> <img src="images/23.png" alt="images/23.png"> </td><td valign="top" width="25%">:center-ptr
+</td><td valign="top" width="25%"><img src="images/98.png" alt="images/98.png">  <img src="images/99.png" alt="images/99.png"> </td><td valign="top" width="25%">:right-tee
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/24.png" alt="images/24.png"> <img src="images/25.png" alt="images/25.png"> </td><td valign="top" width="25%">:circle
+</td><td valign="top" width="25%"><img src="images/100.png" alt="images/100.png"> <img src="images/101.png" alt="images/101.png"> </td><td valign="top" width="25%">:rightbutton
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/26.png" alt="images/26.png"> <img src="images/27.png" alt="images/27.png"> </td><td valign="top" width="25%">:clock
+</td><td valign="top" width="25%"><img src="images/102.png" alt="images/102.png"> <img src="images/103.png" alt="images/103.png"> </td><td valign="top" width="25%">:rtl-logo
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/28.png" alt="images/28.png"> <img src="images/29.png" alt="images/29.png"> </td><td valign="top" width="25%">:coffee-mug
+</td><td valign="top" width="25%"><img src="images/104.png" alt="images/104.png"> <img src="images/105.png" alt="images/105.png"> </td><td valign="top" width="25%">:sailboat
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/30.png" alt="images/30.png"> <img src="images/31.png" alt="images/31.png"> </td><td valign="top" width="25%">:cross
+</td><td valign="top" width="25%"><img src="images/106.png" alt="images/106.png"> <img src="images/107.png" alt="images/107.png"> </td><td valign="top" width="25%">:sb-down-arrow
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/32.png" alt="images/32.png"> <img src="images/33.png" alt="images/33.png"> </td><td valign="top" width="25%">:cross-reverse
+</td><td valign="top" width="25%"><img src="images/108.png" alt="images/108.png"> <img src="images/109.png" alt="images/109.png"> </td><td valign="top" width="25%">:sb-h-double-arrow
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/34.png" alt="images/34.png"> <img src="images/35.png" alt="images/35.png"> </td><td valign="top" width="25%">:crosshair
+</td><td valign="top" width="25%"><img src="images/110.png" alt="images/110.png"> <img src="images/111.png" alt="images/111.png"> </td><td valign="top" width="25%">:sb-left-arrow
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/36.png" alt="images/36.png"> <img src="images/37.png" alt="images/37.png"> </td><td valign="top" width="25%">:diamond-cross
+</td><td valign="top" width="25%"><img src="images/112.png" alt="images/112.png"> <img src="images/113.png" alt="images/113.png"> </td><td valign="top" width="25%">:sb-right-arrow
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/38.png" alt="images/38.png"> <img src="images/39.png" alt="images/39.png"> </td><td valign="top" width="25%">:dot
+</td><td valign="top" width="25%"><img src="images/114.png" alt="images/114.png"> <img src="images/115.png" alt="images/115.png"> </td><td valign="top" width="25%">:sb-up-arrow
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/40.png" alt="images/40.png"> <img src="images/41.png" alt="images/41.png"> </td><td valign="top" width="25%">:dot-box-mask
+</td><td valign="top" width="25%"><img src="images/116.png" alt="images/116.png"> <img src="images/117.png" alt="images/117.png"> </td><td valign="top" width="25%">:sb-v-double-arrow
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/42.png" alt="images/42.png"> <img src="images/43.png" alt="images/43.png"> </td><td valign="top" width="25%">:double-arrow
+</td><td valign="top" width="25%"><img src="images/118.png" alt="images/118.png"> <img src="images/119.png" alt="images/119.png"> </td><td valign="top" width="25%">:shuttle
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/44.png" alt="images/44.png"> <img src="images/45.png" alt="images/45.png"> </td><td valign="top" width="25%">:draft-large
+</td><td valign="top" width="25%"><img src="images/120.png" alt="images/120.png"> <img src="images/121.png" alt="images/121.png"> </td><td valign="top" width="25%">:sizing
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/46.png" alt="images/46.png"> <img src="images/47.png" alt="images/47.png"> </td><td valign="top" width="25%">:draft-small
+</td><td valign="top" width="25%"><img src="images/122.png" alt="images/122.png"> <img src="images/123.png" alt="images/123.png"> </td><td valign="top" width="25%">:spider
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/48.png" alt="images/48.png"> <img src="images/49.png" alt="images/49.png"> </td><td valign="top" width="25%">:draped-box
+</td><td valign="top" width="25%"><img src="images/124.png" alt="images/124.png"> <img src="images/125.png" alt="images/125.png"> </td><td valign="top" width="25%">:spraycan
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/50.png" alt="images/50.png"> <img src="images/51.png" alt="images/51.png"> </td><td valign="top" width="25%">:exchange
+</td><td valign="top" width="25%"><img src="images/126.png" alt="images/126.png"> <img src="images/127.png" alt="images/127.png"> </td><td valign="top" width="25%">:star
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/52.png" alt="images/52.png"> <img src="images/53.png" alt="images/53.png"> </td><td valign="top" width="25%">:fleur
+</td><td valign="top" width="25%"><img src="images/128.png" alt="images/128.png"> <img src="images/129.png" alt="images/129.png"> </td><td valign="top" width="25%">:target
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/54.png" alt="images/54.png"> <img src="images/55.png" alt="images/55.png"> </td><td valign="top" width="25%">:gobbler
+</td><td valign="top" width="25%"><img src="images/130.png" alt="images/130.png"> <img src="images/131.png" alt="images/131.png"> </td><td valign="top" width="25%">:tcross
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/56.png" alt="images/56.png"> <img src="images/57.png" alt="images/57.png"> </td><td valign="top" width="25%">:gumby
+</td><td valign="top" width="25%"><img src="images/132.png" alt="images/132.png"> <img src="images/133.png" alt="images/133.png"> </td><td valign="top" width="25%">:top-left-arrow
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/58.png" alt="images/58.png"> <img src="images/59.png" alt="images/59.png"> </td><td valign="top" width="25%">:hand1
+</td><td valign="top" width="25%"><img src="images/134.png" alt="images/134.png"> <img src="images/135.png" alt="images/135.png"> </td><td valign="top" width="25%">:top-left-corner
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/60.png" alt="images/60.png"> <img src="images/61.png" alt="images/61.png"> </td><td valign="top" width="25%">:hand2
+</td><td valign="top" width="25%"><img src="images/136.png" alt="images/136.png"> <img src="images/137.png" alt="images/137.png"> </td><td valign="top" width="25%">:top-right-corner
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/62.png" alt="images/62.png"> <img src="images/63.png" alt="images/63.png"> </td><td valign="top" width="25%">:heart
+</td><td valign="top" width="25%"><img src="images/138.png" alt="images/138.png"> <img src="images/139.png" alt="images/139.png"> </td><td valign="top" width="25%">:top-side
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/64.png" alt="images/64.png"> <img src="images/65.png" alt="images/65.png"> </td><td valign="top" width="25%">:icon
+</td><td valign="top" width="25%"><img src="images/140.png" alt="images/140.png"> <img src="images/141.png" alt="images/141.png"> </td><td valign="top" width="25%">:top-tee
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/66.png" alt="images/66.png"> <img src="images/67.png" alt="images/67.png"> </td><td valign="top" width="25%">:iron-cross
+</td><td valign="top" width="25%"><img src="images/142.png" alt="images/142.png"> <img src="images/143.png" alt="images/143.png"> </td><td valign="top" width="25%">:trek
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/68.png" alt="images/68.png"> <img src="images/69.png" alt="images/69.png"> </td><td valign="top" width="25%">:left-ptr
+</td><td valign="top" width="25%"><img src="images/144.png" alt="images/144.png"> <img src="images/145.png" alt="images/145.png"> </td><td valign="top" width="25%">:ul-angle
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/70.png" alt="images/70.png"> <img src="images/71.png" alt="images/71.png"> </td><td valign="top" width="25%">:left-side
+</td><td valign="top" width="25%"><img src="images/146.png" alt="images/146.png"> <img src="images/147.png" alt="images/147.png"> </td><td valign="top" width="25%">:umbrella
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/72.png" alt="images/72.png"> <img src="images/73.png" alt="images/73.png"> </td><td valign="top" width="25%">:left-tee
+</td><td valign="top" width="25%"><img src="images/148.png" alt="images/148.png"> <img src="images/149.png" alt="images/149.png"> </td><td valign="top" width="25%">:ur-angle
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"><img src="images/74.png" alt="images/74.png"> <img src="images/75.png" alt="images/75.png"> </td><td valign="top" width="25%">:leftbutton
+</td><td valign="top" width="25%"><img src="images/150.png" alt="images/150.png"> <img src="images/151.png" alt="images/151.png"> </td><td valign="top" width="25%">:watch
+
+<p><br></td></tr><tr align="left"><td valign="top" width="25%"></td><td valign="top" width="25%"></td><td valign="top" width="25%"><img src="images/152.png" alt="images/152.png"> <img src="images/153.png" alt="images/153.png"> </td><td valign="top" width="25%">:xterm
+
+   <br></td></tr></table>
+
+<div class="node">
+<a name="Examples"></a>
+<p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Dictionary">Dictionary</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Overview">Overview</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<!-- node-name,  next,  previous,  up -->
+<h2 class="chapter">2 Examples</h2>
+
+<p>Open display and set cursor theme for it:
+
+<pre class="lisp">     (set-theme *display* "Vanilla-DMZ-LH" 24)
+</pre>
+   <p>Get cursor object:
+
+<pre class="lisp">     (setf cursor (get-cursor *root* :left-prt))
+</pre>
+   <p>Set it to window:
+<pre class="lisp">     (setf (xlib:window-cursor *root*) cursor)
+</pre>
+   <p>All cursor pixmaps can be viewed in window. Just click on name:
+
+<pre class="lisp">     (asdf:load-system :clx-cursor-test)
+     (clx-cursor-test:show-window "Vanilla-DMZ-AA")
+</pre>
+   <div class="node">
+<a name="Dictionary"></a>
+<p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Concept-Index">Concept Index</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Examples">Examples</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<!-- node-name,  next,  previous,  up -->
+<h2 class="chapter">3 Dictionary</h2>
+
+<p><a name="Package-xcursor"></a>
+
+<div class="defun">
+&mdash; Package: <b>xcursor</b><var><a name="index-xcursor-1"></a></var><br>
+<blockquote><p>Library for loading cursor pixmaps from Xcur files and rendering it
+with Xrender. Library supports themes. 
+</p></blockquote></div>
+
+   <p><a name="index-g_t_0040earmuffs_007bicon_002dpaths_007d-2"></a><a name="Variable-_002aicon_002dpaths_002a"></a>
+
+<div class="defun">
+&mdash; Variable: <b>*icon-paths*</b><var><a name="index-g_t_0040earmuffs_007bicon_002dpaths_007d-3"></a></var><br>
+<blockquote><p>Contains paths for themes. 
+</p></blockquote></div>
+
+   <p><a name="index-set_002dtheme-4"></a><a name="Function-set_002dtheme"></a>
+
+<div class="defun">
+&mdash; Function: <b>set-theme</b><var> display &amp;optional name size<a name="index-set_002dtheme-5"></a></var><br>
+<blockquote><p>Sets current theme to name and size. 
+</p></blockquote></div>
+
+   <p><a name="index-theme-6"></a><a name="Function-theme"></a>
+
+<div class="defun">
+&mdash; Function: <b>theme</b><var> display<a name="index-theme-7"></a></var><br>
+<blockquote><p>Returns current theme name and size. 
+</p></blockquote></div>
+
+   <p><a name="index-xcursor-8"></a><a name="Structure-xcursor"></a>
+
+<div class="defun">
+&mdash; Structure: <b>xcursor</b><var><a name="index-xcursor-9"></a></var><br>
+<blockquote><p>Class precedence list: <code>xcursor, structure-object, t</code>
+
+        <p>Structure contains xcursor information from Xcur file. 
+Images slot is array of xcursor-images. 
+</p></blockquote></div>
+
+   <p><a name="index-xcursor_002dimage-10"></a><a name="Structure-xcursor_002dimage"></a>
+
+<div class="defun">
+&mdash; Structure: <b>xcursor-image</b><var><a name="index-xcursor_002dimage-11"></a></var><br>
+<blockquote><p>Class precedence list: <code>xcursor-image, structure-object, t</code>
+
+        <p>Structure containg cursor glyph information. Data is 2 dimensional array with <code>argb</code> pixels. 
+Data can be used in xlib:create-image :data parameter. 
+Delay slot is used for animated cursors (milliseconds). 
+</p></blockquote></div>
+
+<!-- @include include/fun-xcursor-make-xcursor.texinfo -->
+<!-- @include include/fun-xcursor-xcursor-p.texinfo -->
+<!-- @include include/fun-xcursor-copy-xcursor.texinfo -->
+<!-- @include include/fun-xcursor-xcursor-filename.texinfo -->
+<!-- @include include/fun-xcursor-xcursor-copyright.texinfo -->
+<!-- @include include/fun-xcursor-xcursor-license.texinfo -->
+<!-- @include include/fun-xcursor-xcursor-other.texinfo -->
+<!-- @include include/fun-xcursor-xcursor-images.texinfo -->
+<!-- @include include/fun-xcursor-make-xcursor-image.texinfo -->
+<!-- @include include/fun-xcursor-xcursor-image-p.texinfo -->
+<!-- @include include/fun-xcursor-copy-xcursor-image.texinfo -->
+<!-- @include include/fun-xcursor-xcursor-image-width.texinfo -->
+<!-- @include include/fun-xcursor-xcursor-image-height.texinfo -->
+<!-- @include include/fun-xcursor-xcursor-image-xhot.texinfo -->
+<!-- @include include/fun-xcursor-xcursor-image-yhot.texinfo -->
+<!-- @include include/fun-xcursor-xcursor-image-delay.texinfo -->
+<!-- @include include/fun-xcursor-xcursor-image-data.texinfo -->
+   <p><a name="index-load_002dcursor_002dfrom_002dfile-12"></a><a name="Function-load_002dcursor_002dfrom_002dfile"></a>
+
+<div class="defun">
+&mdash; Function: <b>load-cursor-from-file</b><var> display filepath<a name="index-load_002dcursor_002dfrom_002dfile-13"></a></var><br>
+<blockquote><p>Reads Xcur file, and returns xcursor object. xcursor object can be used in <a href="#Function-add_002dcursor"><code>add-cursor</code></a>. 
+</p></blockquote></div>
+
+   <p><a name="index-add_002dcursor-14"></a><a name="Function-add_002dcursor"></a>
+
+<div class="defun">
+&mdash; Function: <b>add-cursor</b><var> dispaly xcursor name<a name="index-add_002dcursor-15"></a></var><br>
+<blockquote><p>Stores xcursor into cache. <var>name</var> must be keyword. 
+</p></blockquote></div>
+
+   <p><a name="index-cursor-16"></a><a name="Function-cursor"></a>
+
+<div class="defun">
+&mdash; Function: <b>cursor</b><var> drawable name<a name="index-cursor-17"></a></var><br>
+<blockquote><p>Returns cursor object, which can be used with (xlib:window-cursor). 
+If Xrender and theme icon file is available, tries to load cursor from that file, else load standard xlib cursor glyph. index.theme is not supported. 
+</p></blockquote></div>
+
+<div class="node">
+<a name="Concept-Index"></a>
+<p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Function-Index">Function Index</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Dictionary">Dictionary</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<!-- node-name,  next,  previous,  up -->
+<h2 class="appendix">Appendix A Concept Index</h2>
+
+<ul class="index-cp" compact>
+   </ul><div class="node">
+<a name="Function-Index"></a>
+<p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Variable-Index">Variable Index</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Concept-Index">Concept Index</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<!-- node-name,  next,  previous,  up -->
+<h2 class="appendix">Appendix B Function Index</h2>
+
+
+
+<ul class="index-fn" compact>
+<li><a href="#index-add_002dcursor-14"><code>add-cursor</code></a>: <a href="#Dictionary">Dictionary</a></li>
+<li><a href="#index-cursor-16"><code>cursor</code></a>: <a href="#Dictionary">Dictionary</a></li>
+<li><a href="#index-load_002dcursor_002dfrom_002dfile-12"><code>load-cursor-from-file</code></a>: <a href="#Dictionary">Dictionary</a></li>
+<li><a href="#index-set_002dtheme-4"><code>set-theme</code></a>: <a href="#Dictionary">Dictionary</a></li>
+<li><a href="#index-theme-6"><code>theme</code></a>: <a href="#Dictionary">Dictionary</a></li>
+   </ul><div class="node">
+<a name="Variable-Index"></a>
+<p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Type-Index">Type Index</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Function-Index">Function Index</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<!-- node-name,  next,  previous,  up -->
+<h2 class="appendix">Appendix C Variable Index</h2>
+
+
+
+<ul class="index-vr" compact>
+<li><a href="#index-g_t_0040earmuffs_007bicon_002dpaths_007d-2"><code>*icon-paths*</code></a>: <a href="#Dictionary">Dictionary</a></li>
+<li><a href="#index-xcursor-1"><code>xcursor</code></a>: <a href="#Dictionary">Dictionary</a></li>
+   </ul><div class="node">
+<a name="Type-Index"></a>
+<p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Colophon">Colophon</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Variable-Index">Variable Index</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<!-- node-name,  next,  previous,  up -->
+<h2 class="appendix">Appendix D Type Index</h2>
+
+
+
+<ul class="index-tp" compact>
+<li><a href="#index-xcursor-8"><code>xcursor</code></a>: <a href="#Dictionary">Dictionary</a></li>
+<li><a href="#index-xcursor_002dimage-10"><code>xcursor-image</code></a>: <a href="#Dictionary">Dictionary</a></li>
+   </ul><div class="node">
+<a name="Colophon"></a>
+<p><hr>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Type-Index">Type Index</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<!-- node-name,  next,  previous,  up -->
+<h2 class="unnumbered">Colophon</h2>
+
+<p>This manual is maintained in Texinfo, and automatically translated
+into other forms (e.g. HTML or pdf). If you're <em>reading</em> this
+manual in one of these non-Texinfo translated forms, that's fine, but
+if you want to <em>modify</em> this manual, you are strongly advised to
+seek out a Texinfo version and modify that instead of modifying a
+translated version.
+
+</body></html>
+
+<!--
+
+Local Variables:
+coding: utf-8
+End:
+
+-->

@@ -1,0 +1,5 @@
+@findex xcursor-other
+@anchor{Function xcursor-other}
+@deffn {Function} {xcursor-other} instance
+Return whether debug-block represents elsewhere code.
+@end deffn

@@ -1,0 +1,5 @@
+@vindex @earmuffs{icon-paths}
+@anchor{Variable *icon-paths*}
+@defvr {Variable} {@earmuffs{icon-paths}}
+Contains paths for themes.
+@end defvr

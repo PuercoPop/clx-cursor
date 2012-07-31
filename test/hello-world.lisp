@@ -27,7 +27,7 @@
     (unwind-protect
          (progn
            (clx-cursor:set-theme display theme)
-           (clx-cursor:add-cursor window (clx-cursor:load-cursor-from-file display "/usr/share/icons/Vanilla-DMZ-LH/cursors/14fef782d02440884392942c11205230") :default)
+           ;;(clx-cursor:add-cursor window (clx-cursor:load-cursor-from-file display "/usr/share/icons/Vanilla-DMZ-LH/cursors/14fef782d02440884392942c11205230") :default)
            (xlib:map-window window)
            (setf (xlib:gcontext-foreground grackon) black)
            (xlib:event-case (display :force-output-p t
@@ -59,7 +59,7 @@
                                                           (* 3 (floor y 20))))
                                                   clx-cursor::*cursor-names*))))
                                 (setf (xlib:window-cursor window)
-                                      (clx-cursor:cursor window :default)))
+                                      (clx-cursor:cursor window :X-cursor)))
                             
                             nil
                             )

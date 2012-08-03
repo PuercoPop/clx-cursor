@@ -15,9 +15,9 @@
          (white (xlib:screen-white-pixel screen))
          (window
            (xlib:create-window :parent root :x 0 :y 0 :width 640 :height 480 
-                          :class :input-output
-                          :background white
-                          :event-mask '(:key-press :key-release :exposure :button-press
+                               :class :input-output
+                               :background white
+                               :event-mask '(:key-press :key-release :exposure :button-press
                                         :structure-notify)))
          (grackon (xlib:create-gcontext
                    :drawable window
@@ -60,7 +60,6 @@
                                                   clx-cursor::*cursor-names*))))
                                 (setf (xlib:window-cursor window)
                                       (clx-cursor:cursor window :X-cursor)))
-                            
                             nil
                             )
              (:key-press (code state) (char= #\Space (xlib:keycode->character display code state)))))

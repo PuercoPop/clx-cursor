@@ -590,8 +590,9 @@ If Xrender and theme icon file is available, tries to load cursor from that file
                   (get-old-cursor drawable (getf *cursor-names* name (getf *cursor-names* :X-cursor)))))
       (xlib:cursor cursor))))
 
-(defun add-cursor (dispaly xcursor name)
-  "Stores xcursor into cache. @var{name} must be keyword."
+(defun add-cursor (display drawable xcursor name)
+  "Stores xcursor into cache. @var{drawable} must be window or pixmap.
+ @var{name} must be keyword."
   (let* ((cursor-cache (display-cursor-cache display))
         (old-cursor (gethash name cursor-cache)))
     (typecase old-cursor

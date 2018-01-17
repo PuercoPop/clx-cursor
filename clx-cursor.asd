@@ -18,7 +18,7 @@
   :author "Michael Filonenko <filonenko.mikhail@gmail.com>"
   :license "MIT"
   :version "0.1"
-  :depends-on (#:clx #:cl-fad)
+  :depends-on (#:clx #:clx-cursor #:cl-fad)
   :components ((:module test
                         :components ((:file "hello-world")))))
 
